@@ -38,42 +38,42 @@ public class ConnectAd {
 
     }
 
-    public static void querygroup(LdapContext ldapContext) throws Exception {
-
-        SearchControls searchControls = new SearchControls();
-        searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
-        String searchFilter = "objectclass=groupOfNames";
-        String searchBase = "dc=group,dc=ldap,dc=eorionx,dc=com";
-        String returnAttr[] = {"dn", "cn", "member"};
-        searchControls.setReturningAttributes(returnAttr);
-        NamingEnumeration<SearchResult> answer = ldapContext.search(searchBase, searchFilter, searchControls);
-
-        while (answer.hasMoreElements()) {
-            SearchResult sr = answer.next();
-            Attributes Attrs = sr.getAttributes();
-            if (Attrs != null) {
-                NamingEnumeration<?> ne = Attrs.getAll();
-                while(ne.hasMore()) {
-                    Attribute Attr = (Attribute)ne.next();
-                    String name = Attr.getID();
-                    Enumeration<?> values = Attr.getAll();
-                    if (values != null) { // 迭代
-                        while (values.hasMoreElements()) {
-                            String value = "";
-                            if("objectGUID".equals(name)) {
-                                value = UUID.nameUUIDFromBytes((byte[]) values.nextElement()).toString();
-                            } else {
-                                value = (String)values.nextElement();
-                            }
-                            System.out.println(name + " " + value);
-                        }
-                    }
-                }
-                System.out.println("=====================");
-
-                Collection
-            }
-        }
-
-    }
+//    public static void querygroup(LdapContext ldapContext) throws Exception {
+//
+//        SearchControls searchControls = new SearchControls();
+//        searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
+//        String searchFilter = "objectclass=groupOfNames";
+//        String searchBase = "dc=group,dc=ldap,dc=eorionx,dc=com";
+//        String returnAttr[] = {"dn", "cn", "member"};
+//        searchControls.setReturningAttributes(returnAttr);
+//        NamingEnumeration<SearchResult> answer = ldapContext.search(searchBase, searchFilter, searchControls);
+//
+//        while (answer.hasMoreElements()) {
+//            SearchResult sr = answer.next();
+//            Attributes Attrs = sr.getAttributes();
+//            if (Attrs != null) {
+//                NamingEnumeration<?> ne = Attrs.getAll();
+//                while(ne.hasMore()) {
+//                    Attribute Attr = (Attribute)ne.next();
+//                    String name = Attr.getID();
+//                    Enumeration<?> values = Attr.getAll();
+//                    if (values != null) { // 迭代
+//                        while (values.hasMoreElements()) {
+//                            String value = "";
+//                            if("objectGUID".equals(name)) {
+//                                value = UUID.nameUUIDFromBytes((byte[]) values.nextElement()).toString();
+//                            } else {
+//                                value = (String)values.nextElement();
+//                            }
+//                            System.out.println(name + " " + value);
+//                        }
+//                    }
+//                }
+//                System.out.println("=====================");
+//
+//                Collection
+//            }
+//        }
+//
+//    }
 }

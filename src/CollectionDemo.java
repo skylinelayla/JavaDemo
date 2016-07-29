@@ -12,7 +12,8 @@ public class CollectionDemo {
         al.add("java3");
         al.add("java4");
 
-        al.
+        System.out.println(al.size());
+
 
     }
 }
