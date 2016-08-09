@@ -60,8 +60,13 @@ public class ListDemo {
             System.out.println(en.nextElement());
         }
         LinkedList linkedList = new LinkedList();
+        linkedList.addFirst("java01");//加在头部
+        linkedList.addFirst("java02");
+        linkedList.addFirst("java03");
+        linkedList.addFirst("java04");
+        linkedList.addLast("java05");
 
-
+        System.out.println(linkedList);
 
 
 
