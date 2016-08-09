@@ -11,3 +11,6 @@ out/production/ApiTest/CollectionDemo.class
 out/production/ApiTest/ListDemo.class
 .idea/vcs.xml
 out/production/
+*.class
+*.iml
+*.xml
