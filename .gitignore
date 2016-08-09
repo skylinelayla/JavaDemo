@@ -1,5 +1,4 @@
 # Created by .ignore support plugin (hsz.mobi)
-.gitignore
 .idea/.name
 .idea/compiler.xml
 .idea/copyright/
@@ -10,5 +9,5 @@
 .idea/workspace.xml
 out/production/ApiTest/CollectionDemo.class
 out/production/ApiTest/ListDemo.class
-*.xml
-*.class
+.idea/vcs.xml
+out/production/
