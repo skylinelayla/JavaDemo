@@ -14,3 +14,5 @@ out/production/
 *.class
 *.iml
 *.xml
+*.jar
+
